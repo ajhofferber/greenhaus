@@ -1,0 +1,9 @@
+<%= form_for (@user) do |f| %>
+<h4><%= f.label :email %></h4>
+<h4><%= f.text_field :email%></h4>
+<h4><%= f.label :username %></h4>
+<h4><%= f.text_field :username %></h4>
+<h4><%= f.label :password %></h4>
+<h4><%= f.password_field :password%></h4>
+<%= f.submit %>
+<% end %>
