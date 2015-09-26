@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bloggin</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <script type="text/template" id='post-template'>
+    <h3>
+      <%%= title %>
+      <%%= body %>
+    </h3>
+  </script>
+
+
+</head>
+<body>
+
+  <%= yield %>
+
+  
+</body>
+</html>

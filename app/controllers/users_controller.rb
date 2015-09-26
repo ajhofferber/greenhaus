@@ -19,11 +19,12 @@ class UsersController < ApplicationController
   def profile
     authenticate!
     @user = current_user
+    render layout: "profile_layout"
   end
 
   private
     def user_params
-      params.require(:user).permit(:username, :password, :email)
+      params.require(:user).permit(:username, :password, :email, :token)
     end
 
 
