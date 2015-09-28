@@ -1,10 +1,13 @@
+
 <h1>DIS IS YO PROFILE</h1>
 
-<h3> <%= link_to 'Log Out',  log_out_path, method: :delete %> </h3>
+<h3> <%= button_to 'Log Out',  log_out_path, method: :delete %> </h3>
 
 <input type="hidden" id='api-token' value="<%= @user.token %>">
 
 <form class="create-post" action="/api/posts" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="hidden" name="token" value="<%= @user.token %>">
   <input type="text" id="title" name="post[title]">
   <input type="text" id="body" name="post[body]">
   <input type="submit" value="BLOG ON!">

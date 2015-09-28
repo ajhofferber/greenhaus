@@ -2,3 +2,10 @@
 
 <a href="/login">Log In</a>
 <a href="/signup">Sign Up</a>
+
+
+<% @posts.each do |post| %>
+<h3><%= @users.find(post.user_id).username %></h3>
+<h3><%= post.title %></h3>
+<h5><%= post.body %></h5>
+<% end %>
