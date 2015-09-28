@@ -4,7 +4,7 @@ var token = $('#api-token').val();
     headers:{
       "accept": "application/json",
       "token": token
-    };
+    }
 });
 
 var app = app || {};

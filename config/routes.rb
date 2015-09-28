@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users'  => 'users#create'
   get '/login'  => 'users#login'
+  get '/about' => 'welcome#about'
 #user profile routes
   get '/users/profile' => 'users#profile', as: :user_profile
   post '/users/profile' => 'users#profile'
@@ -14,9 +15,9 @@ Rails.application.routes.draw do
   delete '/sessions' => 'sessions#destroy', as: :log_out
 
 #api routes
-namespace :api do
-  resources :posts, except: [:new, :edit]
-end
+  namespace :api do
+    resources :posts, except: [:new, :edit]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

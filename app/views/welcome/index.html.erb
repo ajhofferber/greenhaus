@@ -1,11 +1,20 @@
-<h1>OH HI</h1>
-
-<a href="/login">Log In</a>
-<a href="/signup">Sign Up</a>
-
-
-<% @posts.each do |post| %>
-<h3><%= @users.find(post.user_id).username %></h3>
-<h3><%= post.title %></h3>
-<h5><%= post.body %></h5>
-<% end %>
+<div class="row">
+  <div id="left-column" class="three columns">
+    <img class="logo" src="/assets/cutenacho.png"></img> <h1>Nachos<br>&<br>Margs</h1>
+    <h4>"NACHO" ordinary food blog</h4>
+  </div>
+  <div id="wrapper" class="nine columns">
+    <div id="main-content">
+      <div id="navbar" class="row">
+        <a class="links" href="/about">About</a> <a class="links" href="/login">Contributors</a> <a href="/signup" class="links">Join Us!</a>
+      </div>
+      <div id='recipes-list' class="row">
+        <% @posts.each do |post| %>
+        <h3><%= @users.find(post.user_id).username %></h3>
+        <h3><%= post.title %></h3>
+        <h5><%= post.body %></h5>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
