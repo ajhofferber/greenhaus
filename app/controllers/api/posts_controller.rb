@@ -12,21 +12,12 @@ include Api::PostsHelper
   end
 
   def create
-    post = @current_user.posts.create(post_params)
-    respond_to do |format|
-      if post.save
-        format.html{head :no_content}
-        format.json{head :no_content}
-      else
-        format.html{render :status => 401}
-        format.json{render :status => 401}
-      end
-    end
+    render json: @current_user.posts.create(post_params)
   end
 
   def destroy
     @current_user.posts.destroy(params[:id])
-    render status: 202
+    render json: {status: 202, message: 'success'}
   end
 
   private

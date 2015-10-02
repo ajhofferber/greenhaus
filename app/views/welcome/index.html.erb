@@ -10,10 +10,12 @@
       </div>
       <div id='recipes-list' class="row">
         <% @posts.each do |post| %>
-        <h3><%= @users.find(post.user_id).username %></h3>
-        <h3><%= post.title %></h3>
-        <h5><%= post.body %></h5>
-        <% end %>
+          <div class="recipe">
+            <h3><%= post.title %></h3>
+            <p align="left"class="author">Recipe submitted by: <%= @users.find(post.user_id).username%></p>
+            <p><%= post.body %></p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

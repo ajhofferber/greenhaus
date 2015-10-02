@@ -6,13 +6,14 @@
 <input type="hidden" id='api-token' value="<%= @user.token %>">
 
 <form class="create-post" action="/api/posts" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= token_tag %>
   <input type="hidden" name="token" value="<%= @user.token %>">
-  <input type="text" id="title" name="post[title]">
-  <input type="text" id="body" name="post[body]">
+  <input type="text" id="title" name="post[title]" placeholder="Blog Post Title"></br>
+  <textarea id="body" name="post[body]" placeholder="Recipe goes here!"cols="100" rows="20" ... ></textarea></br>
   <input type="submit" value="BLOG ON!">
 </form>
 
-
+<h2>Here are all of your blog post contributions</h2>
+</br>
 <section id="post-list">
 </section>

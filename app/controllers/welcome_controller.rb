@@ -2,7 +2,8 @@ class WelcomeController < ApplicationController
 
   def index
     @users = User.all
-    @posts = Post.all
+    @plants = Plants.all
+
   end
 
   def about
