@@ -9,11 +9,9 @@
         <a class="links" href="/about">About</a> <a class="links" href="/login">Contributors</a> <a href="/signup" class="links">Join Us!</a>
       </div>
       <div id='recipes-list' class="row">
-        <% @posts.each do |post| %>
+        <% @plants.each do |plant| %>
           <div class="recipe">
-            <h3><%= post.title %></h3>
-            <p align="left"class="author">Recipe submitted by: <%= @users.find(post.user_id).username%></p>
-            <p><%= post.body %></p>
+            <h3><%= plant.name %></h3>
           <% end %>
         </div>
       </div>

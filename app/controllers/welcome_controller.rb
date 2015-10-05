@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
 
   def index
     @users = User.all
-    @plants = Plants.all
+    @plants = Plant.all
 
   end
 
