@@ -20,7 +20,15 @@ doc = Nokogiri::HTML(open(url))
 
 data =  doc.css('tr').map do |row|
 
-  name = row.css('td')[0].css('strong').text() || row.css('td')[0].css('a').text()
+  # if name = row.css('td')[0].css('strong').text()
+  # else name = row.css('td')[0].css('a').text()
+  # end
+ # name = row.css('td')[0].css('a').text()
+ if row.css('td')[0].css('strong')
+   name = row.css('td')[0].css('strong').text()
+ elsif row.css('td')[0].css('a')
+   name = row.css('td')[0].css('a').text()
+ end
   science = row.css('td')[0].css('em').text()
   name = name.gsub(science, '')
   description = row.css('td').last.text().gsub('See Web Page', "")
@@ -33,26 +41,6 @@ data =  doc.css('tr').map do |row|
 end
 
 
-require 'rubygems'
-require 'nokogiri'
-require 'awesome-print'
-
-dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
-require File.join(dir, 'httparty')
-require 'pp'
-
-class HtmlParserIncluded < HTTParty::Parser
-  def html
-    Nokogiri::HTML(body)
-  end
-end
-
-class Page
-  include HTTParty
-  parser HtmlParserIncluded
-end
-
-pp Page.get('http://www.thegardenhelper.com/hpprofiles.html')
 
 
 data[29..138].each do |plant|
@@ -64,11 +52,16 @@ Plant.create({  name: plant[:name],
 
 end
 
-data[29..138].each do |plant|
+require 'nokogiri'
+require 'open-uri'
+require 'json'
 
-{  name: plant[:name],
-  science: plant[:science],
-  description: plant[:description]
-}
+url = "http://www.thegardenhelper.com/hpprofiles.html"
+doc = Nokogiri::HTML(open(url))
 
+data =  doc.css('tr').map do |row|
+
+img = row.css('td')[1].css('href')
+
+{img: img}
 end
