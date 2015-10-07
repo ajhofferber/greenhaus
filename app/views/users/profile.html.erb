@@ -14,6 +14,6 @@
 </form>
 
 <h2>Here are all of your blog post contributions</h2>
-</br>
-<section id="post-list">
-</section>
+<% @greeneries.each do |greenery|%>
+<h3><%= greenery.plant.name %></h3>
+<% end %>

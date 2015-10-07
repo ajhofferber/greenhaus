@@ -18,6 +18,8 @@ require 'json'
 url = "http://www.thegardenhelper.com/hpprofiles.html"
 doc = Nokogiri::HTML(open(url))
 
+counter = 0
+
 data =  doc.css('tr').map do |row|
 
   # if name = row.css('td')[0].css('strong').text()
@@ -25,10 +27,12 @@ data =  doc.css('tr').map do |row|
   # end
  # name = row.css('td')[0].css('a').text()
  if row.css('td')[0].css('strong')
-   name = row.css('td')[0].css('strong').text()
- elsif row.css('td')[0].css('a')
-   name = row.css('td')[0].css('a').text()
+  #  name = row.css('td')[0].css('strong').text()
+  else
+   counter += 1
+  #  name = row.css('td')[0].css('a').text()
  end
+ puts counter
   science = row.css('td')[0].css('em').text()
   name = name.gsub(science, '')
   description = row.css('td').last.text().gsub('See Web Page', "")

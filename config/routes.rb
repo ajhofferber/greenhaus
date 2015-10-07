@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/login'  => 'users#login'
   get '/about' => 'welcome#about'
   get '/plants' => 'plants#index'
+  get '/plants/:id' => 'plants#show'
 #user profile routes
   get '/users/profile' => 'users#profile', as: :user_profile
   post '/users/profile' => 'users#profile'
@@ -15,10 +16,8 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy', as: :log_out
 
-#api routes
-  namespace :api do
-    resources :posts, except: [:new, :edit]
-  end
+  post '/greenery' => 'greeneries#create'
+  delete 'greenery/:id' => 'greeneries#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
