@@ -1,0 +1,6 @@
+<form id="fav-button" class="result-line" action="/greenery" method="post">
+  <input type="hidden" name="user[token]" value="<%= @user.token %>"/>
+  <input type="hidden" name="greenery[user_id]" value="<%= @user.id %>"/>
+  <input class='plant_id' type="hidden" name="greenery[plant_id]" value="<%= @plant.id %>"/>
+  <input type="submit" value="&hearts;">
+</form>
