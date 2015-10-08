@@ -1,19 +1,28 @@
 
-<h1>DIS IS YO PROFILE</h1>
 
-<h3> <%= button_to 'Log Out',  log_out_path, method: :delete %> </h3>
+
+<h6> <%= button_to 'Log Out',  log_out_path, method: :delete %> </h6>
 
 <input type="hidden" id='api-token' value="<%= @user.token %>">
+<div class="row">
+  <h1>DIS IS YO PROFILE, <%= @user.username %></h1>
+</div>
+<div class="row">
+  <h2>Your Greenhaus</h2>
+    <% @greeneries.each_with_index do |greenery, index|%>
+      <div class="col s4">
+      <h3><%= greenery.plant.name %></h3>
 
-<form class="create-post" action="/api/posts" method="post">
-  <%= token_tag %>
-  <input type="hidden" name="token" value="<%= @user.token %>">
-  <input type="text" id="title" name="post[title]" placeholder="Blog Post Title"></br>
-  <textarea id="body" name="post[body]" placeholder="Recipe goes here!"cols="100" rows="20" ... ></textarea></br>
-  <input type="submit" value="BLOG ON!">
-</form>
+      <% if (index+1)%4==0 %>
+    </div>
+    <div class="col s4">
+      <% end %>
+        </div>
+    <% end %>
 
-<h2>Here are all of your blog post contributions</h2>
-<% @greeneries.each do |greenery|%>
-<h3><%= greenery.plant.name %></h3>
-<% end %>
+</div>
+
+
+  <img src="http://www.thegardenhelper.com/psd/pinguicula_vulgaris.jpg" alt="broken image :("/>
+
+<img style="-webkit-user-select: none" src="http://www.thegardenhelper.com/psd/pinguicula_vulgaris.jpg">

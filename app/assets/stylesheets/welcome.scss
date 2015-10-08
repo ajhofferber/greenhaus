@@ -27,7 +27,7 @@ section.module.content {
   padding: 40px 0;
 }
 section.module.parallax {
-  height: 600px;
+  height: 800px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -36,9 +36,15 @@ section.module.parallax {
 section.module.parallax-1 {
   background-image: url("/assets/backrnd.png");
 }
-section.module.parallax-2 {
-  background-image: url("/assets/backrnd.png");
-}
-section.module.parallax-3 {
-  background-image: url("../img/demo/_small/3.jpg");
+// section.module.parallax-2 {
+//   background-image: url("/assets/backgroundbanana.png");
+// }
+// section.module.parallax-3 {
+//   background-image: url("../img/demo/_small/3.jpg");
+// }
+
+#title{
+  width: 140%;
+  margin-top: 20%;
+  margin-left: -20%;
 }
