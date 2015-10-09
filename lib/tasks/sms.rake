@@ -1,0 +1,2 @@
+namespace :sms do
+end
