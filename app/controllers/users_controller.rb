@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     authenticate!
     @user = current_user
     @greeneries = Greenery.where("user_id = ?", @current_user.id)
-    render layout: "profile_layout"
   end
 
   private

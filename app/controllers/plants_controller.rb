@@ -2,7 +2,7 @@ class PlantsController < ApplicationController
   include SessionsHelper
 
   def index
-    @plants = Plant.all
+    @plants = Plant.all.sort
   end
 
   def show

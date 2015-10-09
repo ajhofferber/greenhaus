@@ -11,7 +11,7 @@
     <% @greeneries.each_with_index do |greenery, index|%>
       <div class="col s4">
       <h3><%= greenery.plant.name %></h3>
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRHjnSsQSPPBdPi202-C8Fo1d4yawKvBLjuuzpszdVlbfhnEi0w" alt="broken image :("/>
+      <div class="profile-display"><img src="<%=greenery.plant.img_url%>" style="width: 250px" alt="broken image :("/></div>
       <a href="/plants/<%= greenery.plant.id %>">See More</a>
       <% if (index+1)%4==0 %>
     </div>
