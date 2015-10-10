@@ -48,3 +48,14 @@ section.module.parallax-1 {
   margin-top: 20%;
   margin-left: -20%;
 }
+
+.dropdown-button{
+  position: fixed;
+  left: 85%;
+  opacity:.75;
+  margin: .5%;
+}
+
+.dropdown-button:hover{
+  opacity: 1.0;
+}

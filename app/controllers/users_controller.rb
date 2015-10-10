@@ -22,9 +22,27 @@ class UsersController < ApplicationController
     @greeneries = Greenery.where("user_id = ?", @current_user.id)
   end
 
+  def edit
+    authenticate!
+    @user = User.find(params[:id])
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    redirect_to '/users/profile'
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.delete()
+    redirect_to '/'
+  end
+
+
   private
     def user_params
-      params.require(:user).permit(:username, :password, :email, :token)
+      params.require(:user).permit(:username, :password, :email, :pic_url, :token)
     end
 
 

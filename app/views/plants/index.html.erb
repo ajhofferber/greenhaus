@@ -4,7 +4,7 @@
   <% @plants.each_with_index do |plant, index|%>
   <div class="ind-plant col s4">
     <img class="thumb" src="<%= plant.img_url%>" alt="" />
-    <h5><a href="/plants/<%= plant.id %>"><%= plant.name %></a></h5>
+    <h6><a class="plantname" href="/plants/<%= plant.id %>"><%= plant.name %></a></h6>
     <% if (index+1)%4==0 %>
   </div>
   <div class="col s4">

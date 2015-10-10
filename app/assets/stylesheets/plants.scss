@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+$main-font-color: hex(#33691e);
+
 img.thumb{
   width: 200px;
 
@@ -11,4 +13,16 @@ img.thumb{
 .ind-plant{
   height: 350px;
   text-align: center;
+}
+
+h6{
+  font-size: 1em;
+}
+
+.plantname{
+    color: green;
+}
+
+.plantname:hover{
+  color: pink;
 }

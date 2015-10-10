@@ -3,6 +3,7 @@ class PlantsController < ApplicationController
 
   def index
     @plants = Plant.all.sort
+    @user = current_user
   end
 
   def show

@@ -1,0 +1,17 @@
+<h2>Update your information, <%=@user.username%></h2>
+
+<%= form_for(@user, url: user_update_path, method: :put) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :pic_url%>
+  <%= f.text_field :pic_url %>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  <%=  f.submit %>
+<% end %>
+<form action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit"> Delete Account </button>
+</form>

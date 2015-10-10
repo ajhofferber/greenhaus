@@ -10,17 +10,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-      <div class="nav-wrapper grey darken-3">
-        <a href="/" class="brand-logo center "><img id="title" src="<%= image_path("title.png") %>"  style="width: 100px;"/></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/plants">Explore Plants</a></li>
-          <li><a href="/about">About greenhaus</a><li>
-          <li><a href="/signup">Make an Account</a></li>
-          <li><a href="/login">Log In</a></li>
-        </ul>
-      </div>
-    </nav>
+  <% if current_user %>
+    <nav>
+        <div class="nav-wrapper grey darken-3">
+          <a href="/" class="brand-logo center "><img id="title" src="<%= image_path("title.png") %>"  style="width: 100px;"/></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/plants">Explore Plants</a></li>
+            <li><a href="/about">About greenhaus</a><li>
+            <li><a href="/users/profile">Profile</a></li>
+            <li><a href="/users/<%=@user.id%>/edit">Edit Profile</a></li>
+            <li> <%= link_to 'Log Out',  log_out_path, method: :delete %> <li>
+          </ul>
+        </div>
+      </nav>
+      <% else %>
+      <nav>
+          <div class="nav-wrapper grey darken-3">
+            <a href="/" class="brand-logo center "><img id="title" src="<%= image_path("title.png") %>"  style="width: 100px;"/></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="/plants">Explore Plants</a></li>
+              <li><a href="/about">About greenhaus</a><li>
+              <li><a href="/signup">Make an Account</a></li>
+              <li><a href="/login">Log In</a></li>
+            </ul>
+          </div>
+        </nav>
+      <% end %>
   <div class="container">
     <%= yield %>
   </div>
