@@ -1,5 +1,6 @@
-namespace :sms do
+desc "this task is called by the heroku schdeuler"
 
+task :check_to_text => :environment do
 
   require 'twilio-ruby'
   require 'pry'

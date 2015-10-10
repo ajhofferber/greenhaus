@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'materialize-sass'
 
+gem 'twilio-ruby'
+
 gem 'iconv'
 
 # Use Unicorn as the app server
