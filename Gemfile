@@ -30,9 +30,11 @@ gem 'materialize-sass'
 
 gem 'twilio-ruby'
 
-gem 'skrollr-rails'
 
 gem 'iconv'
+
+gem 'rails_12factor', group: :production
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -56,7 +58,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
-group :production do
-      gem 'rails_12factor'
-    end
