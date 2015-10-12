@@ -1,6 +1,7 @@
 <form id="fav-button" class="result-line" action="/greenery" method="post">
 
   <input type="hidden" name="user[token]" value="<%= @user.token %>"/>
+  <input type="hidden" name="greenery[last_sent]" value=" <%= Time.now.to_i.floor %>">
   <input type="hidden" name="greenery[user_id]" value="<%= @user.id %>"/>
   <input class='plant_id' type="hidden" name="greenery[plant_id]" value="<%= @plant.id %>"/>
   <p class="add-plant">Have one of these? Add it to your greehaus!</p> <input id="add-button" class="add-plant" type="submit" value="&hearts;">

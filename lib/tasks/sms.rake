@@ -6,28 +6,34 @@ task :check_to_text => :environment do
 
   account_sid = ENV['TWIL_SID']
   auth_token = ENV['TWIL_TOKEN']
-  client = Twilio::REST::Client.new account_sid, auth_token
+  @client = Twilio::REST::Client.new account_sid, auth_token
 
-  from = "+15094123281" # Your Twilio number
-
-  @greeneries = Greenery.all
+  @from = "+15094123281" # Your Twilio number
 
 
-  @greeneries.each do |greenery|
 
-    # time_difference = Time.now - greenery[:last_sent]
-    # if time_difference > greenery.plant[:frequency]
+  def sendMessages
+    @greeneries = Greenery.all
 
-    client.account.messages.create(
-      :from => from,
-      :to => greenery.user.phone,
-      :body => "Hello #{greenery.user.username}! Don't forget to water your #{greenery.plant.name} today! xo greenhaus"
-    )
-    puts "Sent message to #{greenery.user.username}"
+    @greeneries.each do |greenery|
+
+       @time_difference = Time.now.to_f.floor - greenery[:last_sent]
+       if @time_difference > greenery.plant[:moisture]*10
+
+      @client.account.messages.create(
+        :from => @from,
+        :to => greenery.user.phone,
+        :body => "Hello #{greenery.user.username}! Don't forget to water your #{greenery.plant.name} today! xo greenhaus"
+      )
+      puts "Sent message to #{greenery.user.username}"
+      greenery[:last_sent] = Time.now.to_f.floor
+      end
+      greenery
+    end
   end
+sendMessages()
 
 end
-
 # desc "this task is called by the heroku schdeuler"
 #
 # task :check_to_text => :environment do
