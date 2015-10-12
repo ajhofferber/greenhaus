@@ -3,7 +3,7 @@ desc "this task is called by the heroku schdeuler"
 task :check_to_text => :environment do
 
   require 'twilio-ruby'
-  require 'pry'
+
   ​
   $data = [   ## Not global... rather use the database
     {
@@ -43,7 +43,7 @@ task :check_to_text => :environment do
       if time_difference > item[:frequency]
   ​
         $client.messages.create(
-          from: '+1 5094123281',
+          from: '+15094123281',
           to: '+15094386223',
           body: item[:message]
         )
@@ -58,13 +58,13 @@ task :check_to_text => :environment do
   ​
   ​
   ​
-  while true  ## Heroku Schelduler
-    sendMessages()
-    sleep(2) ## Heroku Schelduler
-  end ## Heroku Schelduler
-  ​
-  ​
-  #
+  # while true  ## Heroku Schelduler
+  #   sendMessages()
+  #   sleep(2) ## Heroku Schelduler
+  # end ## Heroku Schelduler
+  # ​
+  # ​
+  # #
 
 
 
