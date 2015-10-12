@@ -30,6 +30,8 @@ gem 'materialize-sass'
 
 gem 'twilio-ruby'
 
+gem 'skrollr-rails'
+
 gem 'iconv'
 
 # Use Unicorn as the app server

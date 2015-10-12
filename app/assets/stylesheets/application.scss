@@ -19,12 +19,9 @@
 
 $backgroundmain: rgba(240, 165, 149, 0.84);
 $main-font-color: hex(#33691e);
+$background: hex(#F5FFFA);
 
 html {
    font-family: 'Playfair Display', serif;
-
+   background-color: $background;
  }
-
-input{
-  background-color: none;
-}

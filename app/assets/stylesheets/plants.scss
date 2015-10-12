@@ -6,7 +6,9 @@
 $main-font-color: hex(#33691e);
 
 img.thumb{
-  width: 200px;
+  height: auto;
+  width: 75%;
+  margin-top: 1%;
 
 }
 
@@ -25,4 +27,19 @@ h6{
 
 .plantname:hover{
   color: pink;
+}
+
+.add-plant{
+  display: inline;
+  margin-left: 5%;
+}
+
+#add-button{
+  color: hotpink;
+}
+
+.plant-show{
+  margin:10%;
+  width: 80%;
+  border: 3px solid black;
 }

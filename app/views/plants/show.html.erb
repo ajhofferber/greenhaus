@@ -1,7 +1,13 @@
-<h1><%= @plant.name %></h1>    <a href="/plants">Back</a> <a href="/">Home</a>
-<h3><%= @plant.science %></h3>
-<h5><%= @plant.description %></h5>
-<img src="<%=@plant.img_url%>"  />
-<% if current_user %>
-<%=render 'greenform'%>
-<% end %>
+<div class="row">
+  <div class="col s6">
+    <h1><%= @plant.name %></h1>
+    <h3><%= @plant.science %></h3>
+    <h5><%= @plant.description %></h5>
+  </div>
+  <div class="col s6">
+    <img class='plant-show' src="<%=@plant.img_url%>" />
+      <% if current_user %>
+      <%=render 'greenform'%>
+      <% end %>
+  </div>
+</div>

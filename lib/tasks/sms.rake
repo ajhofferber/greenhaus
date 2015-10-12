@@ -2,28 +2,7 @@ desc "this task is called by the heroku schdeuler"
 
 task :check_to_text => :environment do
 
-  require 'twilio-ruby'
 
-  ​
-  $data = [   ## Not global... rather use the database
-    {
-      message: 'You are great!',
-      frequency: 20,
-      last_sent: Time.now
-    },
-    {
-      message: 'You are super!',
-      frequency: 10,
-      last_sent: Time.now
-    },
-    {
-      message: 'You are wonder!',
-      frequency: 5,
-      last_sent: Time.now
-    },
-  ]
-  ​
-  ​
   account_sid = ENV['TWIL_SID']
   auth_token = ENV['TWIL_TOKEN']
   ​
@@ -37,35 +16,25 @@ task :check_to_text => :environment do
   ​
   def sendMessages
   ​
-    $data.map! do |item|
+    @greeneries.map! do |greenery|
   ​
-      time_difference = Time.now - item[:last_sent]
-      if time_difference > item[:frequency]
+      time_difference = Time.now - greenery[:last_sent]
+      if time_difference > greenery.plant[:frequency]
   ​
         $client.messages.create(
           from: '+15094123281',
           to: '+15094386223',
-          body: item[:message]
+          body: greenery[:message]
         )
   ​
-        item[:last_sent] = Time.now
+        greenery[:last_sent] = Time.now
       end
   ​
-      item
+      greenery
     end
   ​
   end
   ​
+  ​sendMessages()
   ​
-  ​
-  # while true  ## Heroku Schelduler
-  #   sendMessages()
-  #   sleep(2) ## Heroku Schelduler
-  # end ## Heroku Schelduler
-  # ​
-  # ​
-  # #
-
-
-
 end

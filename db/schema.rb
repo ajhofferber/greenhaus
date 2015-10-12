@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010142809) do
+ActiveRecord::Schema.define(version: 20151012015800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,11 @@ ActiveRecord::Schema.define(version: 20151010142809) do
   create_table "greeneries", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "plant_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                                                                                          null: false
+    t.datetime "updated_at",                                                                                          null: false
+    t.string   "message",       default: "Hi! Your plants love you. Don't forget to water them today. xo greenhaus."
+    t.integer  "last_sent"
+    t.boolean  "text_reminder"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -44,6 +47,7 @@ ActiveRecord::Schema.define(version: 20151010142809) do
     t.datetime "updated_at",                                                                                                          null: false
     t.string   "pic_url",         default: "https://s-media-cache-ak0.pinimg.com/736x/29/c6/e0/29c6e032e266ab009f2a1f884df0e331.jpg"
     t.integer  "phone"
+    t.boolean  "text_reminder"
   end
 
 end

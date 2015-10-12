@@ -7,18 +7,31 @@
 </div>
 <div class="col s10">
 <input type="hidden" id='api-token' value="<%= @user.token %>">
+
   <h2>Your Greenhaus</h2>
+
+  <div class="row">
+
     <% @greeneries.each_with_index do |greenery, index|%>
       <div class="col s4">
-      <h3><%= greenery.plant.name %></h3>
-      <div class="profile-display"><img src="<%=greenery.plant.img_url%>" style="width: 250px" alt="broken image :("/></div>
-      <a href="/plants/<%= greenery.plant.id %>">See More</a>
-      <% if (index+1)%4==0 %>
-    </div>
-    <div class="col s4">
-      <% end %>
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="<%=greenery.plant.img_url%>">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><%= greenery.plant.name %><i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Bio<i class="material-icons right">close</i></span>
+            <%= check_box_tag(:text_reminder) %>
+            <%= label_tag(:text_reminder, "Check here to get text reminders to take care of this plant") %>
+            <a href="/plants/<%= greenery.plant.id %>">Learn More</a>
+          </div>
         </div>
-    <% end %>
-
-</div>
-</div>
+      </div>
+      <% if (index +1) % 3 == 0 %>
+        </div>
+        <div class ="row">
+      <%end%>
+    <%end%>
+  </div>
