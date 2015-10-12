@@ -17,17 +17,23 @@ task :check_to_text => :environment do
 
     @greeneries.each do |greenery|
 
-       @time_difference = Time.now.to_f.floor - greenery[:last_sent]
-       if @time_difference > greenery.plant[:moisture]*10
+       @time_difference = Time.now.to_i  - greenery[:last_sent]
+       if @time_difference > ((greenery.plant[:moisture])*86400)
 
       @client.account.messages.create(
         :from => @from,
         :to => greenery.user.phone,
         :body => "Hello #{greenery.user.username}! Don't forget to water your #{greenery.plant.name} today! xo greenhaus"
       )
-      puts "Sent message to #{greenery.user.username}"
-      greenery[:last_sent] = Time.now.to_f.floor
+      puts "Sent message to #{greenery.user.username} for her #{greenery.plant.name}"
+      puts "#{greenery.last_sent}"
+      puts "difference: #{@time_difference}"
+      puts "frequency: #{greenery.plant[:moisture]}"
+      greenery.update(last_sent: Time.now.to_i)
+      puts "#{greenery.last_sent}"
       end
+      puts "frequency: #{greenery.plant[:moisture]*86400}"
+
       greenery
     end
   end

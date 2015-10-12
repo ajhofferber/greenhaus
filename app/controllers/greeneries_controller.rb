@@ -3,6 +3,7 @@ class GreeneriesController < ApplicationController
 
   def create
     @greeneries = Greenery.create(greenery_params)
+
     redirect_to '/users/profile'
   end
 
@@ -14,7 +15,7 @@ class GreeneriesController < ApplicationController
 
   private
   def greenery_params
-    params.require(:greenery).permit(:user_id, :plant_id)
+    params.require(:greenery).permit(:user_id, :plant_id, :last_sent)
   end
 
 end

@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20151012202224) do
     t.integer  "plant_id"
     t.datetime "created_at",                                                                                          null: false
     t.datetime "updated_at",                                                                                          null: false
-    t.string   "message",       default: "Hi! Your plants love you. Don't forget to water them today. xo greenhaus."
     t.integer  "last_sent"
     t.boolean  "text_reminder"
   end
