@@ -1,9 +1,12 @@
 <%= form_for (@user) do |f| %>
-<h4><%= f.label :email %></h4>
-<h4><%= f.text_field :email%></h4>
-<h4><%= f.label :username %></h4>
-<h4><%= f.text_field :username %></h4>
-<h4><%= f.label :password %></h4>
-<h4><%= f.password_field :password%></h4>
+<i class="material-icons prefix">email</i>
+<%= f.label :email %>
+<%= f.text_field :email%>
+<i class="material-icons prefix">person_pin</i>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<i class="material-icons prefix">lock</i>
+<%= f.label :password %>
+<%= f.password_field :password%>
 <%= f.submit %>
 <% end %>

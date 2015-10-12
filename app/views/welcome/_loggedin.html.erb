@@ -1,0 +1,8 @@
+<a class='dropdown-button btn light-green darken-4' data-beloworigin='true' data-activates='dropdown1'>menu</a>
+<ul id='dropdown1' class='dropdown-content'>
+  <li><a class="light-green-text text-darken-4" href="/plants">Explore</a></li>
+  <li><a class="light-green-text text-darken-4" href="/users/profile">Your Profile</a></li>
+  <li><a class="light-green-text text-darken-4" href="/about">About greenhaus</a></li>
+  <li><a class="light-green-text text-darken-4" href="/users/<%=@user.id%>/edit">Edit Profile</a></li>
+  <li><%= link_to 'Log Out', log_out_path, :method => :delete, class: 'light-green-text text-darken-4' %> <li>
+</ul>

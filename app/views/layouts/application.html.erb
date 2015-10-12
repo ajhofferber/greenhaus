@@ -5,8 +5,8 @@
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'users', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,11 +15,11 @@
         <div class="nav-wrapper grey darken-3">
           <a href="/" class="brand-logo center "><img id="title" src="<%= image_path("title.png") %>"  style="width: 100px;"/></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/plants">Explore Plants</a></li>
-            <li><a href="/about">About greenhaus</a><li>
-            <li><a href="/users/profile">Profile</a></li>
-            <li><a href="/users/<%=@user.id%>/edit">Edit Profile</a></li>
-            <li> <%= link_to 'Log Out',  log_out_path, :method => :delete %> <li>
+            <li><a class="header-links" href="/plants">Explore Plants</a></li>
+            <li><a class="header-links" href="/about">About greenhaus</a><li>
+            <li><a class="header-links" href="/users/profile">Profile</a></li>
+            <li><a class="header-links" href="/users/<%=@user.id%>/edit">Edit Profile</a></li>
+            <li> <%= link_to 'Log Out',  log_out_path, :method => :delete, class: "header-links" %> <li>
           </ul>
         </div>
       </nav>
@@ -28,10 +28,10 @@
           <div class="nav-wrapper grey darken-3">
             <a href="/" class="brand-logo center "><img id="title" src="<%= image_path("title.png") %>"  style="width: 100px;"/></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="/plants">Explore Plants</a></li>
-              <li><a href="/about">About greenhaus</a><li>
-              <li><a href="/signup">Make an Account</a></li>
-              <li><a href="/login">Log In</a></li>
+              <li><a class="header-links" href="/plants">Explore Plants</a></li>
+              <li><a class="header-links" href="/about">About greenhaus</a><li>
+              <li><a class="header-links" href="/signup">Make an Account</a></li>
+              <li><a class="header-links" href="/login">Log In</a></li>
             </ul>
           </div>
         </nav>

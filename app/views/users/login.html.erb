@@ -1,12 +1,17 @@
-<h1>LOG IN PLZ</h1>
+<h3>Welcome Back!</h3>
+<h5>Log in to see your profile.</h5>
+<br>
 
-<%= form_tag '/sessions', method: :post do %>
-<%= label_tag :username %>
-<%= text_field_tag :username %>
-<%= label_tag :password %>
-<%= password_field_tag :password %>
+<div class="row">
 
-<%= submit_tag 'Log In!'%>
+  <%= form_tag '/sessions', method: :post, class: "col s12" do %>
+  <i class="material-icons prefix">person_pin</i>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+  <i class="material-icons prefix">lock</i>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <%= submit_tag 'Log In!'%>
+  <% end %>
 
-
-<% end %>
+</div>

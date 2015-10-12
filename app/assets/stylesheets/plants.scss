@@ -3,13 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-$main-font-color: hex(#33691e);
+$main-font-color: #33691e;
+
+
 
 img.thumb{
   height: auto;
   width: 75%;
   margin-top: 1%;
-
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .ind-plant{
@@ -22,7 +25,7 @@ h6{
 }
 
 .plantname{
-    color: green;
+  color: $main-font-color;
 }
 
 .plantname:hover{
@@ -42,4 +45,23 @@ h6{
   margin:10%;
   width: 80%;
   border: 3px solid black;
+}
+
+p{
+  font-size: 1.2em;
+}
+
+section{
+  margin-top: 10%;
+  padding: 2%;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#back-link{
+  margin-left: 85%;
+  color: $main-font-color;
+}
+
+#back-link:hover{
+  color: pink;
 }

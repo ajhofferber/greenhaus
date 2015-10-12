@@ -1,13 +1,11 @@
 class WelcomeController < ApplicationController
+include SessionsHelper
 
   def index
-    @users = User.all
+    @user = current_user
     @plants = Plant.all.sort
-
   end
 
-  def about
 
-  end
 
 end

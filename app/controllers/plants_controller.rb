@@ -11,4 +11,8 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
   end
 
+  def about
+    @user = current_user
+  end
+
 end

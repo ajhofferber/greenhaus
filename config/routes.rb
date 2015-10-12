@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users'  => 'users#create'
   get '/login'  => 'users#login'
-  get '/about' => 'welcome#about'
+  get '/about' => 'plants#about'
   get '/plants' => 'plants#index'
   get '/plants/:id' => 'plants#show'
 #user profile routes
