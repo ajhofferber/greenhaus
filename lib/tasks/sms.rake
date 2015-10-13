@@ -18,7 +18,7 @@ task :check_to_text => :environment do
     @greeneries.each do |greenery|
 
        @time_difference = Time.now.to_i  - greenery[:last_sent]
-       if @time_difference > ((greenery.plant[:moisture])*86400)
+       if @time_difference > ((greenery.plant[:moisture])*10)
 
       @client.account.messages.create(
         :from => @from,
@@ -32,7 +32,7 @@ task :check_to_text => :environment do
       greenery.update(last_sent: Time.now.to_i)
       puts "#{greenery.last_sent}"
       end
-      puts "frequency: #{greenery.plant[:moisture]*86400}"
+      puts "frequency: #{greenery.plant[:moisture]*10}"
 
       greenery
     end
