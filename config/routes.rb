@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   delete '/sessions' => 'sessions#destroy', as: :log_out
 
   post '/greenery' => 'greeneries#create'
-  delete 'greenery/:id' => 'greeneries#destroy'
+  delete '/greenery/:id' => 'greeneries#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

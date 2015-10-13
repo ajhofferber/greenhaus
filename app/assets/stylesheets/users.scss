@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "materialize";
+$main-font-color: #33691e;
+
+
 .profile-display{
   width: 33%;
   height: 250px;
@@ -14,4 +18,16 @@
 
 .display{
   text-align: center;
+}
+
+.see-more{
+  color: $main-font-color;
+}
+
+.see-more:hover{
+  color: pink;
+}
+
+.delete-greenery{
+  bottom:0;
 }
