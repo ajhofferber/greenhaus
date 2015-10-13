@@ -1,27 +1,14 @@
 #greenhaus
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+##The green thumb you've never had.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###greenhaus is a plant management application that helps users to better understand and better care for houseplants.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+###User Stories
+
+* As a user, I want to have access to a database of popular house plants, where I can learn more about each of them and see images of each of the plant types.
+
+* As a user, I want to be able to create an account and add the plants that I own to my greehaus.
+
+* As a user, I would love to be able to opt in to have text updates sent to my phone to remind me to water each of the plants that I have in my greenhaus, based on the amount of moisture that each plant requires.
