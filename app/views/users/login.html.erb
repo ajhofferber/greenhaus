@@ -5,10 +5,8 @@
 <div class="row">
 
   <%= form_tag '/sessions', method: :post, class: "col s12" do %>
-  <i class="material-icons prefix">person_pin</i>
   <%= label_tag :username %>
   <%= text_field_tag :username %>
-  <i class="material-icons prefix">lock</i>
   <%= label_tag :password %>
   <%= password_field_tag :password %>
   <%= submit_tag 'Log In!'%>
