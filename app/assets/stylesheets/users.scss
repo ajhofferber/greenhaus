@@ -2,10 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-
 .profile-display{
   width: 33%;
   height: 250px;
+}
+
+#delete-account{
+  margin-left: 87%;
+  font-size: 12px;
+}
+
+.display{
+  text-align: center;
 }

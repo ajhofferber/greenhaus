@@ -1,4 +1,8 @@
-<h2>Update your information, <%=@user.username%></h2>
+<form id="delete-account" action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit"> Delete Account </button>
+</form>
+<h3>Update your information, <%=@user.username%></h3>
 
 <%= form_for(@user, url: user_update_path, method: :put) do |f| %>
   <%= f.label :username %>
@@ -7,11 +11,17 @@
   <%= f.text_field :email %>
   <%= f.label :pic_url%>
   <%= f.text_field :pic_url %>
+  <p>If you'd like to recieve text reminders, check the box and add your phone number!</p>
+  <p>
+    <input type="checkbox" class="filled-in" id="filled-in-box" name="user[text_reminder]" value=true/>
+    <label for="filled-in-box">Text Away!</label>
+  </p>
+  <p>
+    <input type="checkbox" class="filled-in" id="filled-in-box2" name="user[text_reminder]" value=false/>
+    <label for="filled-in-box2">No Thank You.</label>
+  </p>
+  <p>Phone number must be in this format: +1**********</p>
   <%= f.label :phone %>
   <%= f.text_field :phone %>
   <%=  f.submit %>
 <% end %>
-<form action="/users/<%= @user.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit"> Delete Account </button>
-</form>

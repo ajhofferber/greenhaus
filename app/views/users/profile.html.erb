@@ -1,16 +1,22 @@
 
 <div class="row">
 <div class="col s2">
-  <h4>DIS IS YO PROFILE, <%= @user.username %></h4>
+  <h6>Welcome Back, <%= @user.username %></h6>
   <img src="<%= @user.pic_url %>" width="100px" />
 <h6> <%= button_to 'Log Out',  log_out_path, method: :delete %> </h6>
 </div>
 <div class="col s10">
 <input type="hidden" id='api-token' value="<%= @user.token %>">
 
-  <h2>Your Greenhaus</h2>
+  <h2 class="display">Greenhaus</h2>
 
-  <div class="row">
+
+
+    <%if @greeneries.count == 0%>
+      <h6 class="display">No plants in your greenhaus yet! Start <a class="red-text text-lighten-3" href="/plants">exploring</a>.</h6>
+
+    <%else%>
+    <div class="row">
 
     <% @greeneries.each_with_index do |greenery, index|%>
       <div class="col s4">
@@ -22,9 +28,7 @@
             <span class="card-title activator grey-text text-darken-4"><%= greenery.plant.name %><i class="material-icons right">more_vert</i></span>
           </div>
           <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Bio<i class="material-icons right">close</i></span>
-            <%= check_box_tag(:text_reminder) %>
-            <%= label_tag(:text_reminder, "Check here to get text reminders to take care of this plant") %>
+            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
             <a href="/plants/<%= greenery.plant.id %>">Learn More</a>
           </div>
         </div>
@@ -35,3 +39,5 @@
       <%end%>
     <%end%>
   </div>
+
+<%end%>

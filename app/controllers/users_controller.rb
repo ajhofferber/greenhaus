@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update(user_params)
+    binding.pry
     redirect_to '/users/profile'
   end
 
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:username, :password, :email, :pic_url, :phone, :token)
+      params.require(:user).permit(:username, :password, :email, :pic_url, :phone, :text_reminder, :token)
     end
 
 
