@@ -1,11 +1,11 @@
-#greenhaus
+# greenhaus
 
-##The green thumb you've never had.
+## The green thumb you've never had.
 
-###greenhaus is a plant management application that helps users to better understand and better care for houseplants.
+### greenhaus is a plant management application that helps users to better understand and better care for houseplants.
 
 
-###User Stories
+### User Stories
 
 * As a user, I want to have access to a database of popular house plants, where I can learn more about each of them and see images of each of the plant types.
 
