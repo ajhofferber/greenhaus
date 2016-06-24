@@ -3,7 +3,6 @@ class GreeneriesController < ApplicationController
 
   def create
     @greeneries = Greenery.create(greenery_params)
-
     redirect_to '/users/profile'
   end
 
